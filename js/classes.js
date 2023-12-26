@@ -128,12 +128,12 @@ class Fighter extends Sprite{
         // gravity
         if (this.velocity.y === 0) {
             this.velocity.y = 0;
-            this.position.y = 200;
+            this.position.y = percentWindow;
         } else {
             this.velocity.y += gravity;
             setTimeout(() => {
                 this.velocity.y = 0;
-            }, 400)
+            }, 300)
         };
 
     }
@@ -188,7 +188,7 @@ class Fighter extends Sprite{
     botLogick(player) {
         this.velocity.x = 0 ;
         if (!this.dead && !player.dead) {
-            if (this.position.y === 200) {
+            if (this.position.y === percentWindow) {
                 if (this.position.x > player.position.x + 150){
                     if ( this.position.x > player.position.x) {
                         this.runTime = true;

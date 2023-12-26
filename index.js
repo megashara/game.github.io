@@ -4,6 +4,8 @@ const c = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+let percentWindow = 40/100 * canvas.height;
+
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.7;
@@ -163,12 +165,12 @@ function animate() {
 
     // player move
     if (keys.a.pressed && player.lastKey === 'a') {
-        if (player.position.x !== 40){
+        if (player.position.x !== 50){
             player.velocity.x = -5;
         }
         player.switchSprite('run');
     } else if (keys.d.pressed && player.lastKey === 'd') {
-        if (player.position.x !== canvas.width - 150) {
+        if (player.position.x <= canvas.width - 50) {
             player.velocity.x = 5;
         }
         player.switchSprite('run');
@@ -277,7 +279,7 @@ window.addEventListener('keydown', (event) => {
                 break;
             case 'KeyW':
                 if (!player.isJumping) {
-                    player.velocity.y = -20;
+                    player.velocity.y = -15;
                 }
                 break;
             case 'Space':
@@ -299,7 +301,7 @@ window.addEventListener('keydown', (event) => {
             case 'KeyW':
                 if (!player.dead ){
                     if (!enemy.isJumping) {
-                        enemy.velocity.y = -20;
+                        enemy.velocity.y = -15;
                     }
                 }
                 break;
@@ -356,7 +358,7 @@ btn_fight.addEventListener("mousedown", (event) => {
 
 btn_jump.addEventListener("mousedown", (event) => {
     if (!player.isJumping && !player.dead) {
-        player.velocity.y = -20;
+        player.velocity.y = -15;
     }
 }, false);
 
