@@ -1,10 +1,14 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
+let percentWindow;
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function reportWindowSize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    percentWindow = 40/100 * canvas.height;
+}
 
-let percentWindow = 40/100 * canvas.height;
+window.onresize = reportWindowSize;
 
 c.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -255,7 +259,7 @@ function right() {
 function space() {
     if (!player.dead) {
         if (!player.isJumping) {
-            player.velocity.y = -20;
+            player.velocity.y = -15;
         }
     }
 }
