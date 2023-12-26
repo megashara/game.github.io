@@ -382,3 +382,16 @@ window.addEventListener("touchend", (event) => {
     keys.d.pressed = false;
     keys.a.pressed = false;
 }, false);
+
+window.addEventListener("touchstart", tapHandler);
+
+var tapedTwice = false;
+
+function tapHandler(event) {
+    if(!tapedTwice) {
+        tapedTwice = true;
+        setTimeout( function() { tapedTwice = false; }, 300 );
+        return false;
+    }
+    event.preventDefault();
+}
