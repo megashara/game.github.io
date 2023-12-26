@@ -31,7 +31,7 @@ const enemy = new Fighter({
     },
     imageSrc: './img/phantom/Idle.png',
     framesMax: 8,
-    scale: 2.5,
+    scale: 2,
     sprites: {
         idle: {
             imageSrc: './img/phantom/Idle.png',
@@ -89,7 +89,7 @@ const player = new Fighter({
     color: 'blue',
     imageSrc: './img/Fernandes/Idle.png',
     framesMax: 4,
-    scale: 2.5,
+    scale: 2,
     sprites: {
         idle: {
             imageSrc: './img/Fernandes/Idle.png',
@@ -163,12 +163,12 @@ function animate() {
 
     // player move
     if (keys.a.pressed && player.lastKey === 'a') {
-        if (player.position.x !== 0){
+        if (player.position.x !== 40){
             player.velocity.x = -5;
         }
         player.switchSprite('run');
     } else if (keys.d.pressed && player.lastKey === 'd') {
-        if (player.position.x !== canvas.width - 100) {
+        if (player.position.x !== canvas.width - 150) {
             player.velocity.x = 5;
         }
         player.switchSprite('run');
