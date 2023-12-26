@@ -393,5 +393,4 @@ function tapHandler(event) {
         setTimeout( function() { tapedTwice = false; }, 300 );
         return false;
     }
-    alert('You tapped me Twice !!!');
 }
