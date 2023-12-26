@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div style="position: relative; display:inline-block;">
+        <div class="healthBars">
+            <!-- player -->
+            <div class="player">
+                <div class="backHealth"></div>
+                <div id="playerHealth"></div>
+            </div>
+            <!-- timer -->
+            <div id="timer" >
+                10
+            </div>
+            <!-- enemy -->
+            <div class="enemy">
+                <div class="backHealth"></div>
+                <div id="enemyHealth"></div>
+            </div>
+        </div>
+        <div id="tie" style="position: absolute; color: white; display:none; align-items: center; justify-content: center; top: 0; right: 0; bottom: 0; left: 0;">
+            Tie
+        </div>
+        <div id="infoGame">
+            <div class="form">
+                <img src="./img/infoGame/infoGameTop.png" alt="">
+                <div class="text">
+                    Впереди ждёт битва
+                    с Фантомом! Только ты сможешь
+                    его одолеть и спасти мир!
+                </div>
+                <div class="info-btns">
+                    <buttons class="btn btn-left"><img src="./img/btn-left.svg" alt="btn-left"></buttons>
+                    <buttons class="btn btn-right"><img src="./img/btn-right.svg" alt="btn-right"></buttons>
+                    <buttons class="btn btn-fight"><img src="./img/btn-fight.svg" alt="btn-fight"></buttons>
+                    <buttons class="btn btn-jump"><img src="./img/btn-jump.svg" alt="btn-jump"></buttons>
+                </div>
+                <button id="startGame" class="btn startGameBtn" onclick="startGame()">В БОЙ!</button>
+            </div>
+        </div>
+        <div id="controls">
+            <div class="left">
+                <button id="btn-left" class="btn btn-left"></button>
+                <button id="btn-right" class="btn btn-right"></button>
+            </div>
+            <div class="right">
+                <button id="btn-fight" class="btn btn-fight"></button>
+                <button id="btn-jump" class="btn btn-jump"></button>
+            </div>
+        </div>
+        <canvas></canvas>
+    </div>
+
+
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+            integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/utils.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#infoGame{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #191919;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+#infoGame.hide{
+    display: none;
+}
+
+#infoGame .form{
+    border-radius: 10px;
+    border: 1px solid #63FFB3;
+    background: #191919;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px 20px;
+    color: #63FFB3;
+    min-width: 300px;
+}
+
+#infoGame .form .text{
+    max-width: 214px;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+#infoGame .form .info-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 51px;
+}
+
+.btn{
+    background: #63FFB3;
+    color: #191919;
+    border-radius: 73px;
+    border: 1px solid #63FFB3;
+    min-width: 47px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.btn.btn-fight{
+    width: 73px;
+}
+
+#infoGame .form .info-btns .btn-left:before{
+    content: "Влево";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border: 1px solid #63FFB3;
+    border-radius: 50px;
+    position: absolute;
+    top: -42px;
+    left: -15px;
+    color: #63FFB3;
+}
+
+#infoGame .form .info-btns .btn-left:after{
+    content: url("../img/line-left.svg");
+    position: absolute;
+    top: -16px;
+    left: 19px;
+}
+
+#infoGame .form .info-btns .btn-right:before{
+    content: "Вправо";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border: 1px solid #63FFB3;
+    border-radius: 50px;
+    position: absolute;
+    bottom: -47px;
+    color: #63FFB3;
+}
+
+#infoGame .form .info-btns .btn-right:after{
+    content: url("../img/line-right.svg");
+    position: absolute;
+    bottom: -23px;
+}
+
+#infoGame .form .info-btns .btn-fight:before{
+    content: "Удар";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border: 1px solid #63FFB3;
+    border-radius: 50px;
+    position: absolute;
+    top: -42px;
+    left: 32px;
+    color: #63FFB3;
+}
+
+#infoGame .form .info-btns .btn-fight:after{
+    content: url("../img/line-fight.svg");
+    position: absolute;
+    top: -17px;
+    left: 30px;
+}
+
+#infoGame .form .info-btns .btn-jump:before{
+    content: "Прыжок";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border: 1px solid #63FFB3;
+    border-radius: 50px;
+    position: absolute;
+    bottom: -47px;
+    color: #63FFB3;
+}
+
+#infoGame .form .info-btns .btn-jump:after{
+    content: url("../img/line-right.svg");
+    position: absolute;
+    bottom: -23px;
+}
+
+#infoGame .form .startGameBtn{
+    margin-top: 55px;
+    width: 150px;
+}
+
+.startGameBtn:hover{
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #63FFB3;
+}
+
+.healthBars{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px 20%;
+}
+
+.healthBars .player{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    left: 15px;
+    top: 10px;
+}
+.healthBars .player:before{
+    content: url("../img/mainHero.png");
+    position: absolute;
+    left: 0;
+    top: -30px;
+    z-index: 8;
+}
+.healthBars .player .backHealth{
+    background: #191919FF;
+    height: 30px;
+    width: 100%;
+    transform: skew(45deg);
+    border-radius: 5px;
+    border: 1px solid #6DFF3C;
+}
+.healthBars .player #playerHealth{
+    position: absolute;
+    background: rgb(99,255,179);
+    background: linear-gradient(90deg, rgba(99,255,179,1) 37%, rgba(25,25,25,1) 96%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid #6DFF3C;
+    transform: skew(45deg);
+    border-radius: 5px;
+}
+
+#timer{
+    background: url("../img/timerBg.png") center no-repeat;
+    background-size: contain;
+    color: white;
+    height: 50px;
+    width: 82px;
+    flex-shrink: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.healthBars .enemy{
+    position: relative;
+    width: 100%;
+    right: 15px;
+    top: 10px;
+}
+
+.healthBars .enemy:before{
+    content: url("../img/phontom.png");
+    position: absolute;
+    right: 0;
+    top: -10px;
+    z-index: 8;
+}
+
+.healthBars .enemy .backHealth{
+    background: #191919FF;
+    height: 30px;
+    transform: skew(-45deg);
+    border-radius: 5px;
+    border: 1px solid #6DFF3C;
+}
+.healthBars .enemy #enemyHealth{
+    position: absolute;
+    background: rgb(25,25,25);
+    background: linear-gradient(90deg, rgba(25,25,25,1) 4%, rgba(99,255,179,1) 63%);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid #6DFF3C;
+    transform: skew(-45deg);
+    border-radius: 5px;
+}
+
+#controls{
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#controls .left,
+#controls .right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#controls .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+#controls .btn:hover{
+    background: transparent;
+    outline: none;
+}
+
+#controls .btn-left:before{
+    content: url("../img/btn-left.svg");
+}
+
+#controls .btn-left:hover:before{
+    content: url("../img/btn-left-hover.svg");
+}
+
+#controls .btn-right:before{
+    content: url("../img/btn-right.svg");
+}
+
+#controls .btn-right:hover:before{
+    content: url("../img/btn-right-hover.svg");
+}
+
+#controls .btn-fight:before{
+    content: url("../img/btn-fight.svg");
+}
+
+#controls .btn-fight:hover:before{
+    content: url("../img/btn-fight-hover.svg");
+}
+
+#controls .btn-jump:before{
+    content: url("../img/btn-jump.svg");
+}
+
+#controls .btn-jump:hover:before{
+    content: url("../img/btn-jump-hover.svg");
+}
