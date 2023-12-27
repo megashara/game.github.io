@@ -375,6 +375,9 @@ btn_left.addEventListener("touchstart", (event) => {
     }
 }, false);
 btn_right.addEventListener("touchstart", (event) => {
+    if (event && event.touches.length > 1){
+        event.preventDefault();
+    }
     if (!player.dead) {
         keys.d.pressed = true;
         player.lastKey = 'd';
@@ -393,12 +396,8 @@ window.addEventListener("touchend", (event) => {
 
 window.addEventListener("touchstart", tapHandler);
 
-var tapedTwice = false;
-
 function tapHandler(event) {
-    if(!tapedTwice) {
-        tapedTwice = true;
-        setTimeout( function() { tapedTwice = false; }, 300 );
-        return false;
+    if (event && event.touches.length > 1){
+        event.preventDefault();
     }
 }
