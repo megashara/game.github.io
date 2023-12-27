@@ -1,6 +1,8 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
-let percentWindow;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let percentWindow = 40/100 * canvas.height;
 
 function reportWindowSize() {
     canvas.width = window.innerWidth;
